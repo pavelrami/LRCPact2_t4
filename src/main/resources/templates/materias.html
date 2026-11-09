@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Materias | LRCP Act2</title>
+  <link rel="stylesheet" th:href="@{/css/estilos.css}" href="/css/estilos.css" />
+</head>
+<body>
+  <header class="barra"><div class="ancho barra-inner">
+    <a class="marca" th:href="@{/mvc/materias}" href="/mvc/materias"><span class="simbolo">L</span><span>LRCP <small>· Actividad 2</small></span></a>
+    <nav><a class="activo" th:href="@{/mvc/materias}">Materias</a><a th:href="@{/mvc/materias/nuevo}">Registrar materia</a></nav>
+  </div></header>
+  <main class="ancho">
+    <section class="encabezado"><div><span class="etiqueta">SPRING MVC · THYMELEAF</span><h1>Catálogo de materias</h1>
+      <p>Consulta, filtra y registra materias en un ejemplo de aplicación MVC.</p>
+      <p class="proyecto" th:text="${appNombre}">Nombre configurable del proyecto</p></div>
+      <a class="boton" th:href="@{/mvc/materias/nuevo}">+ Nueva materia</a>
+    </section>
+    <section class="tarjeta filtros"><div><h2>Filtrar por categoría</h2><p>Este filtro utiliza <code>@RequestParam</code>.</p></div>
+      <form th:action="@{/mvc/materias}" method="get"><label for="categoria">Categoría</label>
+        <select id="categoria" name="categoria"><option value="" th:selected="${categoriaActual == ''}">Todas</option>
+          <option value="Programacion" th:selected="${categoriaActual == 'Programacion'}">Programación</option>
+          <option value="Gestion" th:selected="${categoriaActual == 'Gestion'}">Gestión</option></select>
+        <button type="submit" class="boton">Filtrar</button>
+        <a class="boton secundario" th:href="@{/mvc/materias}">Limpiar</a>
+      </form>
+    </section>
+    <section class="tarjeta listado"><div class="titulo-seccion"><div><h2>Materias disponibles</h2><p th:text="|${#lists.size(materias)} resultado(s)|">Resultados</p></div><span class="pildora">th:each</span></div>
+      <div class="tabla-scroll"><table><thead><tr><th>ID</th><th>Materia</th><th>Categoría</th><th>Semestre</th><th>Acción</th></tr></thead>
+        <tbody><tr th:each="item : ${materias}"><td th:text="${item.id}">1</td><td class="negrita" th:text="${item.nombre}">Programación web</td>
+          <td><span class="pill" th:text="${item.categoria}">Programacion</span></td><td th:text="${item.semestre}">7</td>
+          <td><a class="enlace" th:href="@{/mvc/materias/{id}(id=${item.id})}">Ver detalle →</a></td></tr>
+        <tr th:if="${#lists.isEmpty(materias)}"><td colspan="5" class="vacio">No hay materias para este filtro.</td></tr></tbody></table></div>
+    </section>
+  </main>
+  <footer><div class="ancho">Actividad 2 · Spring MVC · Datos simulados para fines académicos.</div></footer>
+</body></html>

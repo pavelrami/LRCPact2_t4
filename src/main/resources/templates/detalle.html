@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Detalle de materia | LRCP Act2</title>
+<link rel="stylesheet" th:href="@{/css/estilos.css}" href="/css/estilos.css" /></head>
+<body>
+  <header class="barra"><div class="ancho barra-inner"><a class="marca" th:href="@{/mvc/materias}"><span class="simbolo">L</span><span>LRCP <small>· Actividad 2</small></span></a>
+  <nav><a th:href="@{/mvc/materias}">Materias</a><a th:href="@{/mvc/materias/nuevo}">Registrar materia</a></nav></div></header>
+  <main class="ancho pagina-form"><a class="enlace" th:href="@{/mvc/materias}">← Volver al catálogo</a>
+    <section class="tarjeta detalle"><span class="etiqueta">DETALLE · @PATHVARIABLE</span><h1 th:text="${materia.nombre}">Nombre de la materia</h1>
+    <p class="proyecto" th:text="${appNombre}">Proyecto</p>
+    <div class="linea-dato"><span>Identificador</span><strong th:text="${materia.id}">1</strong></div>
+    <div class="linea-dato"><span>Categoría</span><strong th:text="${materia.categoria}">Programacion</strong></div>
+    <div class="linea-dato"><span>Semestre</span><strong th:text="${materia.semestre}">7</strong></div>
+    <div class="linea-dato"><span>Descripción</span><strong th:text="${materia.descripcion}">Descripción</strong></div>
+    <a class="boton" th:href="@{/mvc/materias/nuevo}">+ Registrar otra materia</a></section>
+  </main>
+  <footer><div class="ancho">Actividad 2 · Detalle de un elemento por identificador.</div></footer>
+</body></html>

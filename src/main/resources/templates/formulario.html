@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registrar materia | LRCP Act2</title><link rel="stylesheet" th:href="@{/css/estilos.css}" href="/css/estilos.css" /></head>
+<body>
+  <header class="barra"><div class="ancho barra-inner"><a class="marca" th:href="@{/mvc/materias}"><span class="simbolo">L</span><span>LRCP <small>· Actividad 2</small></span></a>
+  <nav><a th:href="@{/mvc/materias}">Materias</a><a class="activo" th:href="@{/mvc/materias/nuevo}">Registrar materia</a></nav></div></header>
+  <main class="ancho pagina-form"><a class="enlace" th:href="@{/mvc/materias}">← Volver al catálogo</a>
+    <section class="tarjeta formulario"><span class="etiqueta">FORMULARIO · @MODELATTRIBUTE</span><h1>Registrar nueva materia</h1>
+      <p>Completa los datos para agregar una materia al catálogo de demostración.</p>
+      <p class="proyecto" th:text="${appNombre}">Proyecto</p>
+      <form th:action="@{/mvc/materias/guardar}" th:object="${materia}" method="post">
+        <label for="nombre">Nombre de la materia *</label><input id="nombre" type="text" th:field="*{nombre}" maxlength="100" required placeholder="Ej. Bases de datos" />
+        <div class="dos"><div><label for="categoria">Categoría *</label><select id="categoria" th:field="*{categoria}" required>
+          <option value="">Selecciona una categoría</option><option value="Programacion">Programación</option><option value="Gestion">Gestión</option></select></div>
+          <div><label for="semestre">Semestre *</label><input id="semestre" type="number" min="1" max="14" th:field="*{semestre}" required placeholder="7" /></div></div>
+        <label for="descripcion">Descripción</label><textarea id="descripcion" th:field="*{descripcion}" rows="4" maxlength="500" placeholder="¿De qué trata la materia?"></textarea>
+        <div class="acciones"><a class="boton secundario" th:href="@{/mvc/materias}">Cancelar</a><button type="submit" class="boton">Guardar materia</button></div>
+      </form></section>
+    <p class="aviso">La información se almacena temporalmente en memoria y se reinicia al detener Spring Boot.</p>
+  </main>
+  <footer><div class="ancho">Actividad 2 · Formulario de ejemplo con Thymeleaf y DTO.</div></footer>
+</body></html>
