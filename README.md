@@ -193,7 +193,6 @@ Detalle:
 http://localhost:8080/mvc/materias/1
 
 
-
 ### Enlaces
 
 http://65.52.8.72:8083/mvc/materias
@@ -206,7 +205,7 @@ http://65.52.8.72:8081/proyecto
 
 ### Petición JSON con Postman
 
-![Prueba de Postman](docs/capturas/postman.png)
+![Prueba de Postman](docs/capturas/post.png)
 
 ### Despliegue en Azure
 
