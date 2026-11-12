@@ -97,7 +97,7 @@ La instrucción `th:each` permite recorrer los elementos recibidos desde el cont
 **Endpoint:**
 http://65.52.8.72:8083/mvc/materias
 
-(docs/capturas/listado.png)
+![Listado de materias](docs/capturas/listado.png)
 
 `GET /mvc/materias`
 
@@ -110,7 +110,7 @@ El formulario utiliza `@ModelAttribute` para asociar automáticamente los datos 
 **Endpoints:**
 http://65.52.8.72:8083/mvc/materias/nuevo
 
-(docs/capturas/nuevo.png)
+![Formulario](docs/capturas/nuevo.png)
 
 - `GET /mvc/materias/nuevo`
 - `POST /mvc/materias/guardar`
@@ -122,7 +122,7 @@ Se implementó `@RequestParam` para recibir un parámetro de consulta desde la U
 **Endpoints:**
 http://65.52.8.72:8083/mvc/materias?categoria=Programacion
 
-(docs/capturas/categoria.png)
+![Filtro](docs/capturas/categoria.png)
 
 ### 4. Consulta de detalles
 
@@ -131,7 +131,7 @@ Se utilizó `@PathVariable` para recuperar el identificador de una materia desde
 **Endpoints:**
 http://65.52.8.72:8083/mvc/materias/1
 
-(docs/capturas/filtro.png)
+![Detalle](docs/capturas/filtro.png)
 
 
 ### 5. Registro mediante API REST
@@ -141,7 +141,7 @@ Se implementó un controlador REST con `@RequestBody` para recibir información 
 **Endpoint:**
 http://65.52.8.72:8081/proyecto
 
-(docs/capturas/api.png)
+![Api](docs/capturas/api.png)
 
 
 ## Endpoints del proyecto
@@ -210,7 +210,7 @@ http://65.52.8.72:8081/proyecto
 
 ### Despliegue en Azure
 
-![Aplicaciones funcionando en Azure](docs/capturas/0azure.png)
+![Aplicaciones funcionando en Azure](docs/capturas/azure.png)
 
 
 ## Autor
